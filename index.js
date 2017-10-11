@@ -3,19 +3,10 @@ const Sequelize = require('sequelize');
 function main() {
   const sequelize = new Sequelize(
     process.env.DATABASE_URL,
-    {
-      native: true,
-      ssl: true,
-      dialect: 'postgres',
-      logging: false,
-      operatorsAliases: false,
-    }
+    {dialect: 'postgres'}
   );
 
-  sequelize.query(`select * from person limit 10`)
-    .then(function(data) {
-      console.log('data', data);
-    });
+  return sequelize.query(`select * from person limit 10`);
 }
 
 if (require.main === module) {
