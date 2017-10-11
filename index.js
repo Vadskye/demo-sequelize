@@ -6,7 +6,7 @@ function main() {
     {dialect: 'postgres', operatorsAliases: false}
   );
 
-  return sequelize.query(`select * from person limit 10`);
+  return sequelize.query(`select 1`);
 }
 
 if (require.main === module) {
